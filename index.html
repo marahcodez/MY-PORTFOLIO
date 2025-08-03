@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ukpai Amarachi  Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <style>
+    body {
+      overflow-x: hidden;
+    }
+
+    section {
+      scroll-margin-top: 80px;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: #1c1c1c;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #333;
+    }
+
+    .card-section {
+      background-color: #1c1c1c;
+      padding: 2rem;
+      margin: 2rem auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      border: 1px solid #333;
+      max-width: 900px;
+      transition: transform 0.3s ease;
+    }
+
+    .card-section:hover {
+      transform: translateY(-3px);
+      border-color: #04c5ad;
+    }
+
+    body.light-mode .card-section {
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      color: #222;
+    }
+
+    .card {
+      background-color: #292929;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    body.light-mode .card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      color: #222;
+    }
+  </style>
+</head>
+<body class="dark-mode">
+
+  <button id="theme-toggle">🌙 Change Theme</button>
+
+  <header>
+    <nav class="navbar">
+      <div class="logo">My <span> Life </span></div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#interests">Interests</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hero card-section" data-aos="zoom-in">
+      <h1>Creating Code with Purpose</h1>
+      <p>I'm a seasoned Full Stack Software Engineer with expertise in designing and developing scalable, efficient, and user-friendly applications</p>
+      <a href="#contact" class="btn">Let's Connect</a>
+    </div>
+  </header>
+
+  <section id="about" class="card-section" data-aos="fade-up">
+    <h2>About Me</h2>
+    <p>I’m Ukpai Amarachi, 'm passionate about building innovative solutions and delivering high-quality products. Let's collaborate and bring your ideas to life!</p>
+    <img src="assets/profile.jpg" alt="Ukpai Amarachi" class="profile-img" width="50" height="50" />
+  </section>
+
+  <section id="education" class="card-section" data-aos="fade-up">
+    <h2>Education & Certifications</h2>
+    <ul>
+      <li>BSc in Education & Economics – prestigious University of Calabar (2023)</li>
+      <li> project management</li>
+      <li>Python for Data Science and Machine Learning</li>
+      <li>Full-Stack Web Development Certification</li>
+    </ul>
+    <a class="cv-button" href="assets/School cv.pdf" target="_blank"> Download My CV</a>
+  </section>
+
+  <section id="interests" class="card-section" data-aos="fade-up">
+    <h2>Interests</h2>
+    <div class="grid">
+      <p><strong>Tech Empowerment:</strong> Applying technology to enhance agricultural productivity and sustainability
+.</p>
+      <p><strong>Creative Coding:</strong> Developing software applications to support farmers and agricultural businesses
+</p>
+      <p><strong>Digital Entrepreneurship:</strong> Improving food security and reducing waste through data-driven insights
+</p>
+    </div>
+  </section>
+
+  <section id="projects" class="card-section" data-aos="fade-up">
+    <h2>Projects</h2>
+    <div id="project-container" class="grid"></div>
+  </section>
+
+  <section id="contact" class="card-section contact" data-aos="fade-up">
+    <h2>Let’s Connect</h2>
+    <form action="https://formspree.io/f/yourformid" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <div class="social-icons">
+      <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+    </div>
+  </section>
+
+  <footer class="card-section">
+    <p>© 2025 Martin Mutugi — Built with 💡 for global excellence</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1200, once: true });
+
+    const toggleBtn = document.getElementById('theme-toggle');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+      document.body.classList.toggle('dark-mode');
+    });
+
+    const projects = [
+      {
+        title: "Simple calculator in Python",
+        description: "AI-powered system that boosts survey approvals by 60%.",
+        link: "https://github.com/marahcodez/Arithmetic-Assignment-weekone.git"
+      },
+      {
+        title: "Digital Empowerment Blog",
+        description: "Stories, guides, and resources for African youth in tech.",
+        link: "https://yourblog.netlify.app"
+      },
+      {
+        title: "Simple Website ",
+        description: "Responsive portfolio template built with HTML, CSS, and JS.",
+        link: "https://github.com/PLP-WebTechnologies/july-2025-introduction-to-html-5-marahcodez.git"
+      }
+    ];
+
+    const container = document.getElementById("project-container");
+    projects.forEach(project => {
+      const card = document.createElement("div");
+      card.classList.add("card");
+      card.innerHTML = `
+        <h3>${project.title}</h3>
+        <p>${project.description}</p>
+        <a href="${project.link}" target="_blank">View Project</a>
+      `;
+      container.appendChild(card);
+    });
+  </script>
+</body>
+</html>
